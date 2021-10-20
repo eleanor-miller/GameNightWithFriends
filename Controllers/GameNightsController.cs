@@ -82,6 +82,7 @@ namespace GameNightWithFriends.Controllers
                 return BadRequest();
             }
 
+            // GUARD CLAUSE
             if (gameNight.MinimumPlayers < 2)
             {
                 return BadRequest(new { Message = "You need at least 2 players!" });
@@ -130,6 +131,7 @@ namespace GameNightWithFriends.Controllers
         [HttpPost]
         public async Task<ActionResult<GameNight>> PostGameNight(GameNight gameNight)
         {
+            // GUARD CLAUSE
             if (gameNight.MinimumPlayers < 2)
             {
                 return BadRequest(new { Message = "You need at least 2 players!" });
