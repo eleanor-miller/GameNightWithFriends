@@ -1,6 +1,7 @@
 using System;
+using System.Collections.Generic;
 
-namespace GameNightWithFriends
+namespace GameNightWithFriends.Models
 {
 
     public class GameNight
@@ -12,5 +13,8 @@ namespace GameNightWithFriends
         public DateTime When { get; set; }
         public int MinimumPlayers { get; set; }
         public int MaximumPlayers { get; set; }
+
+        // ONE GameNight HAS MANY Players (the List<Player> goes here)
+        public List<Player> Players { get; set; }
     }
 }
